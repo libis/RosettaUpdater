@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="C:/dps-sdk-3.0.1/dps-sdk-projects/dps-sdk-deposit/lib/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="C:/java/workspace/RosettaUpdater/lib/commons-lang.jar"/>
+	<classpathentry kind="lib" path="C:/java/workspace/RosettaUpdater/lib/commons-io-2.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/java/workspace/RosettaUpdater/lib/commons-codec.jar"/>
+	<classpathentry kind="lib" path="C:/java/workspace/RosettaUpdater/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/java/workspace/RosettaUpdater/lib/log4j.jar"/>
+	<classpathentry kind="lib" path="C:/java/workspace/RosettaUpdater/lib/commons-csv.jar"/>
+	<classpathentry kind="lib" path="C:/dps-sdk-3.0.1/dps-sdk-projects/dps-sdk-deposit/lib/dps-sdk-4.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/u0077845/Documents/NetBeansProjects/dps-permanent-svc-impl/lib/core-sdk-common.jar"/>
+	<classpathentry kind="lib" path="C:/dps-sdk-3.0.1/dps-sdk-projects/dps-sdk-deposit/lib/dom4j.jar"/>
+	<classpathentry kind="lib" path="C:/java/workspace/RosettaUpdater/lib/xmlbeans.jar"/>
+	<classpathentry kind="lib" path="C:/java/workspace/RosettaUpdater/lib/super-csv-2.4.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

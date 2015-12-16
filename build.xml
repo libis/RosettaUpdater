@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="RosettaUpdater">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="c:/eclipse"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+	<property name="version" value="2.2.0" />
+	<property name="version" value="2.2.0" />
+ 
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src" excludes="**/*.launch, **/*.java"/>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="lib" />
+        </copy>
+    </target>
+    <target name="init-lib" depends="init">
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="lib" />
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="src"/>
+        </javac>
+    </target>
+	
+    <target name="create_update_dc_jar" depends="build-project">
+        <jar destfile="C:/java/workspace/RosettaUpdater/dist/rosettaUpdater.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="be.Metadata"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="C:/java/workspace/RosettaUpdater/bin"/>
+            <fileset dir="C:/java/workspace/RosettaUpdater/conf"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/commons-codec.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/commons-csv.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/commons-io-2.0.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/xmlbeans.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/commons-lang.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/log4j.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/servlet-api.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/super-csv-2.4.0.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/xmlbeans.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/dps-sdk-3.0.1/dps-sdk-projects/dps-sdk-deposit/lib/dom4j.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/dps-sdk-3.0.1/dps-sdk-projects/dps-sdk-deposit/lib/dps-sdk-4.2.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/dps-sdk-3.0.1/dps-sdk-projects/dps-sdk-deposit/lib/ojdbc6.jar"/>
+        </jar>
+    </target>
+    <target name="create_add_representation_jar" depends="build-project">
+        <jar destfile="C:/java/workspace/RosettaUpdater/dist/rosettaAddRep.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="be.AddRepresentation"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="C:/java/workspace/RosettaUpdater/bin"/>
+            <fileset dir="C:/java/workspace/RosettaUpdater/conf"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/commons-codec.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/commons-csv.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/commons-io-2.0.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/xmlbeans.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/commons-lang.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/log4j.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/servlet-api.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/super-csv-2.4.0.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/java/workspace/RosettaUpdater/lib/xmlbeans.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/dps-sdk-3.0.1/dps-sdk-projects/dps-sdk-deposit/lib/dom4j.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/dps-sdk-3.0.1/dps-sdk-projects/dps-sdk-deposit/lib/dps-sdk-4.2.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/dps-sdk-3.0.1/dps-sdk-projects/dps-sdk-deposit/lib/ojdbc6.jar"/>
+        </jar>
+    </target>
+	
+	
+</project>
